@@ -506,6 +506,24 @@ $(function() {
     loadPosts();
 });
 
+//背景色の変更
+$(function () {
+    $("#bgcolorButton").click(function(e) {
+        bgchange();
+    });
+});
+
+let bgc=0;
+
+function bgchange(){
+    bgc++;
+    if(bgc%2==1){
+        $("body").css("background-color","red");
+    }else if(bgc%2==0){
+        $("body").css("background-color","#f8f9fa");
+    }
+}
+
 // クリーンアップ処理
 window.addEventListener('unload', () => {
     if (postsListener) {
@@ -557,6 +575,7 @@ window.addEventListener('unload', () => {
             </div>
             <div class="button-group">
                 <button id="postButton" class="btn-primary">投稿する</button>
+                <button id="bgcolorButton" class="btn-secondary">背景色変更</button>
             </div>
         </div>
 
